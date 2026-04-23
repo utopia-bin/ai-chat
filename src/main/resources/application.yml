@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: spring-ai
+  ai:
+    model:
+      chat: tencent-v1
+    tencent:
+      chat:
+        app-key:
