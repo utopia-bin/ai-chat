@@ -1,4 +1,4 @@
-package cn.scws.ai.tencent.support;
+package cn.scws.ai.chat.tencent.support;
 
 import org.springframework.ai.model.ModelOptionsUtils;
 import org.springframework.http.HttpHeaders;

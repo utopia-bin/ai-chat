@@ -1,6 +1,6 @@
-package cn.scws.ai.tencent.v2;
+package cn.scws.ai.chat.tencent.v1;
 
-import cn.scws.ai.tencent.support.TencentChatProperties;
+import cn.scws.ai.chat.tencent.support.TencentChatProperties;
 import org.springframework.ai.chat.model.ChatModel;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
@@ -12,29 +12,29 @@ import org.springframework.web.client.DefaultResponseErrorHandler;
 import org.springframework.web.reactive.function.client.WebClient;
 
 /**
- * V2 AutoConfiguration Of Tencent Knowledge Engine
+ * V1 AutoConfiguration Of Tencent Knowledge Engine
  * <br/>
- * <a href="https://cloud.tencent.com/document/product/1759/129202">参考文档</a>
+ * <a href="https://cloud.tencent.com/document/product/1759/105561">参考文档</a>
  *
  * @author Bin
  * @version 1.0
  * @date 2026/4/2 11:11
  * @since 1.0
  */
-@ConditionalOnClass({TencentV2Api.class})
+@ConditionalOnClass({TencentV1Api.class})
 @EnableConfigurationProperties({TencentChatProperties.class})
 @ConditionalOnProperty(
         name = {"spring.ai.model.chat"},
-        havingValue = "tencent-v2"
+        havingValue = "tencent-v1"
 )
 @Configuration(proxyBeanMethods = false)
-public class TencentV2AutoConfiguration {
+public class TencentV1AutoConfiguration {
     @Bean
-    @ConditionalOnMissingBean(TencentV2Api.class)
-    public TencentV2Api tencentV2Api(TencentChatProperties properties, WebClient.Builder webClientBuilder) {
-        return new TencentV2Api(
+    @ConditionalOnMissingBean(TencentV1Api.class)
+    public TencentV1Api tencentV1Api(TencentChatProperties properties, WebClient.Builder webClientBuilder) {
+        return new TencentV1Api(
                 properties.getBaseUrl(),
-                TencentChatProperties.CHAT_PATH_V2,
+                TencentChatProperties.CHAT_PATH_V1,
                 webClientBuilder,
                 new DefaultResponseErrorHandler()
         );
@@ -42,7 +42,7 @@ public class TencentV2AutoConfiguration {
 
     @Bean
     @ConditionalOnMissingBean(ChatModel.class)
-    public TencentV2ChatModel tencentV2ChatModel(TencentV2Api tencentV2Api, TencentChatProperties properties) {
-        return new TencentV2ChatModel(tencentV2Api, properties.resolveV2Options());
+    public TencentV1ChatModel tencentV1ChatModel(TencentV1Api tencentV1Api, TencentChatProperties properties) {
+        return new TencentV1ChatModel(tencentV1Api, properties.resolveV1Options());
     }
 }

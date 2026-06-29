@@ -1,4 +1,4 @@
-package cn.scws.ai.tencent.support;
+package cn.scws.ai.chat.tencent.support;
 
 import org.springframework.ai.chat.metadata.ChatGenerationMetadata;
 import org.springframework.ai.chat.messages.AssistantMessage;

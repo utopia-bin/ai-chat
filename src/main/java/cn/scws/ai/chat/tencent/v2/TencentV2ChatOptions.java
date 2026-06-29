@@ -1,4 +1,4 @@
-package cn.scws.ai.tencent.v2;
+package cn.scws.ai.chat.tencent.v2;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;

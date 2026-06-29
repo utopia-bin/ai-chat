@@ -1,6 +1,6 @@
-package cn.scws.ai.tencent.v2;
+package cn.scws.ai.chat.tencent.v2;
 
-import cn.scws.ai.tencent.support.AbstractTencentChatModel;
+import cn.scws.ai.chat.tencent.support.AbstractTencentChatModel;
 import org.springframework.ai.chat.messages.Message;
 import org.springframework.ai.chat.messages.MessageType;
 import org.springframework.ai.chat.messages.UserMessage;

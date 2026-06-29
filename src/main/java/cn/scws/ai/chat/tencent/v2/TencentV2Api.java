@@ -1,6 +1,6 @@
-package cn.scws.ai.tencent.v2;
+package cn.scws.ai.chat.tencent.v2;
 
-import cn.scws.ai.tencent.support.AbstractTencentStreamingApi;
+import cn.scws.ai.chat.tencent.support.AbstractTencentStreamingApi;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Builder;

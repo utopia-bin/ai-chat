@@ -1,4 +1,4 @@
-package cn.scws.ai.tencent.v1;
+package cn.scws.ai.chat.tencent.v1;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

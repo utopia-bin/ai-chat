@@ -1,7 +1,7 @@
-package cn.scws.ai.tencent.support;
+package cn.scws.ai.chat.tencent.support;
 
-import cn.scws.ai.tencent.v1.TencentV1ChatOptions;
-import cn.scws.ai.tencent.v2.TencentV2ChatOptions;
+import cn.scws.ai.chat.tencent.v1.TencentV1ChatOptions;
+import cn.scws.ai.chat.tencent.v2.TencentV2ChatOptions;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.boot.context.properties.ConfigurationProperties;

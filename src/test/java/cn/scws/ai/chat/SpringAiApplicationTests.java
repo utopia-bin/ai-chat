@@ -1,10 +1,10 @@
-package cn.scws.ai;
+package cn.scws.ai.chat;
 
-import cn.scws.ai.tencent.support.TencentChatProperties;
-import cn.scws.ai.tencent.v1.TencentV1ChatOptions;
-import cn.scws.ai.tencent.v1.TencentV1EventEnums;
-import cn.scws.ai.tencent.v2.TencentV2ChatOptions;
-import cn.scws.ai.tencent.v2.TencentV2EventEnums;
+import cn.scws.ai.chat.tencent.support.TencentChatProperties;
+import cn.scws.ai.chat.tencent.v1.TencentV1ChatOptions;
+import cn.scws.ai.chat.tencent.v1.TencentV1EventEnums;
+import cn.scws.ai.chat.tencent.v2.TencentV2ChatOptions;
+import cn.scws.ai.chat.tencent.v2.TencentV2EventEnums;
 import jakarta.annotation.Resource;
 import org.junit.jupiter.api.Test;
 import org.springframework.ai.chat.client.ChatClient;
@@ -24,7 +24,7 @@ class SpringAiApplicationTests {
     @Test
     void callV1TencentChat() {
         ChatClient chatClient = chatClientBuilder.build();
-        String userInput = "你好，请问你是谁？";
+        String userInput = "凉山彝绣有哪些代表特点？";
 
         System.out.println("============================================");
         System.out.println("用户提问: " + userInput);
@@ -45,9 +45,10 @@ class SpringAiApplicationTests {
                     Map<String, Object> metadata = output.getMetadata();
                     String eventType = (String) metadata.get("type");
                     if (TencentV1EventEnums.Reply.getType().equals(eventType)) {
+                        System.out.println("\n>>> reply");
                         System.out.print(content);
                     } else {
-                        System.out.print("\n>>> " + eventType + ":\n");
+                        System.out.print("\n>>> " + eventType + "\n");
                         System.out.print(metadata);
                     }
                 })

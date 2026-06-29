@@ -1,4 +1,4 @@
-package cn.scws.ai;
+package cn.scws.ai.chat;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
